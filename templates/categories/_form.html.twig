@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+    {{ form_row(form.name,{'attr':{'class':'form form-control'}}) }}
+    {{ form_row(form.categoryOrder,{'attr':{'class':'form form-control'}}) }}
+    {{ form_row(form.Slug,{'attr':{'class':'form form-control'}}) }}
+    {{ form_row(form.parent,{'attr':{'class':'form form-control'}}) }}
+    <button class="btn btn-primary mt-5">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

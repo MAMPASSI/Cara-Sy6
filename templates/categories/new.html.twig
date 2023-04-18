@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Categories{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="h2" style="font-size: 26px;line-height: 35px;padding: 20px 0;">Create new Categories</h1>
+        {{ include('categories/_form.html.twig') }}
+        <a href="{{ path('app_categories_index') }} " class="btn btn-success mt-3">back to list</a>
+    </div>
+
+
+    
+
+    
+{% endblock %}

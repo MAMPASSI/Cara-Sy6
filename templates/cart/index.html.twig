@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!{% endblock %}
+
+{% block body %}
+    {% if app.user %}
+        <section class="offcanvas offcanvas-end" id="userTools">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title" style="color: #088178;">Votre Profile</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>NOM: {{app.user.lastname}}  </p>
+                <p>PRENOM : {{app.user.firstname}}</p>
+                <p>E-mail : {{app.user.email}}</p>
+                <p>ADRESSE : {{app.user.address}} </p>
+                <p>CODE POSTAL : {{app.user.zipcode}} </p>
+                <p>VILLE : {{app.user.city}} </p>
+                <a href="#" class="btn btn-success mt-3 w-100">Edite</a><br>
+                <a href="{{ path('app_logout') }}" class="btn btn-primary mt-3 w-100">logout</a>
+
+            </div>
+        </section>
+    {% endif %}
+
+    <section id="page-header" class="about-header" style="background:#041e42;">
+        <h2 >#let's_talk</h2>
+        <p>LEAVE A MESSAGE. We love to from you ! </p>
+    </section>
+
+    <section id="cart" class="section-p1" >
+        <table width="100%" >
+            <thead>
+                <tr>
+                    <td>Action</td>
+
+                    <td>Produit</td>
+                    <td>Prix</td>
+                    <td>Quantité</td>
+                    <td>Total</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for element in dataPanier %}
+                    <tr>
+                        <td>
+                            <a href="{{path('cart_add',{id: element.produit.id })}}" class="btn btn-success">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16" style="color: #fff;">
+                                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                                </svg>
+                            </a>
+                            <a href="{{path('cart_remove',{id: element.produit.id })}}" class="btn  btn-warning">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16" style="color: #fff;">
+                                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                                </svg>
+                            </a>
+                            <a href="{{path('cart_delete',{id: element.produit.id })}}" class="btn btn-danger">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16" style="color: #fff;">
+                                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                                </svg>
+                            </a>
+                        </td>
+                        
+                        <td>{{ element.produit.name}}</td>
+                        <td>{{ element.produit.price}}£</td>
+                        <td>{{ element.quantity}}</td>
+                        <td>{{ element.quantity * element.produit.price}}£</td>
+
+                    </tr>
+
+                     
+                {% else %}
+                    <tr>
+                        <td colspan="6" class="text-center text-success h2" style="font-size: 26px;line-height: 35px;padding: 20px 0;">Votre panier est vide</td>
+                    </tr>
+                    
+                {% endfor %}
+            </tbody>
+            
+        </table>
+
+        <a href="{{path('cart_deleteAll')}}" class="btn btn-primary m-3" >Vider le panier</a>
+
+       
+
+    </section>
+
+
+
+{% endblock %}

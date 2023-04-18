@@ -1,0 +1,262 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Titre{% endblock %}
+
+{% block body %}
+    {% if app.user %}
+        <section class="offcanvas offcanvas-end" id="userTools">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title" style="color: #088178;">Votre Profile</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>NOM : {{app.user.lastname}}  </p>
+                <p>PRENOM : {{app.user.firstname}}</p>
+                <p>E-mail : {{app.user.email}}</p>
+                <p>ADRESSE : {{app.user.address}} </p>
+                <p>CODE POSTAL : {{app.user.zipcode}} </p>
+                <p>VILLE : {{app.user.city}} </p>
+                <a href="#" class="btn btn-success mt-3 w-100">modifier votre profile</a><br>
+                <a href="{{ path('app_logout') }}" class="btn btn-primary mt-3 w-100"> se déconnecter</a>
+
+            </div>
+        </section>
+    {% endif %}
+    
+    <section id="hero" style="background: url('img/hero4.png');height: 90vh; width: 100%; background-size: cover;
+    background-position: top 25% right 0; padding: 0 80px;display: flex; flex-direction: column; align-items: flex-start;
+    justify-content: center;">
+        <h4>offre de reprise</h4>
+        <h2>offres Super Valeur</h2>
+        <h1>Sur tous les produits </h1>
+        <p>Economisez plus avec des coupons jusqu'à 70% de reduction ! </p>
+        <button style="background: url('img/button.png');">Achetez maintenant</button>
+
+    </section>
+
+    <section id="feature" class="section-p1">
+        <div class="fe-box">
+            <img src="img/features/f1.png" alt="">
+            <h6>Free shipping</h6>
+        </div>
+        <div class="fe-box">
+            <img src="img/features/f2.png" alt="">
+            <h6>Online Order</h6>
+        </div>
+        <div class="fe-box">
+            <img src="img/features/f3.png" alt="">
+            <h6>Save Money</h6>
+        </div>
+        <div class="fe-box">
+            <img src="img/features/f4.png" alt="">
+            <h6>Promotions</h6>
+        </div>
+        <div class="fe-box">
+            <img src="img/features/f5.png" alt="">
+            <h6>Happy Sell</h6>
+        </div>
+        <div class="fe-box">
+            <img src="img/features/f6.png" alt="">
+            <h6>F24/7 Support</h6>
+        </div>
+
+    </section>
+
+    <section id="product1" class="section-p1">
+        <h2>Produits Populaires</h2>
+        <p>collection d'été nouveau Disegn moderne</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="img/products/f1.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <div class="star">
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><span class="material-symbols-outlined cart">shopping_cart</span></a>
+            </div>
+
+            <div class="pro">
+                <img src="img/products/f8.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <div class="star">
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><span class="material-symbols-outlined cart">shopping_cart</span></a>
+            </div>
+
+            <div class="pro">
+                <img src="img/products/f2.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <div class="star">
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><span class="material-symbols-outlined cart">shopping_cart</span></a>
+            </div>
+
+            <div class="pro">
+                <img src="img/products/f3.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <div class="star">
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><span class="material-symbols-outlined cart">shopping_cart</span></a>
+            </div>
+
+
+            <div class="pro">
+                <img src="img/products/f4.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <div class="star">
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><span class="material-symbols-outlined cart">shopping_cart</span></a>
+            </div>
+
+            <div class="pro">
+                <img src="img/products/f5.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <div class="star">
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><span class="material-symbols-outlined cart">shopping_cart</span></a>
+            </div>
+
+            <div class="pro">
+                <img src="img/products/f6.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <div class="star">
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><span class="material-symbols-outlined cart">shopping_cart</span></a>
+            </div>
+
+            <div class="pro">
+                <img src="img/products/f7.jpg" alt="">
+                <div class="des">
+                    <span>adidas</span>
+                    <h5>Cartoon Astronaut T-shirts</h5>
+                    <div class="star">
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                        <span class="material-symbols-outlined">star_half</span>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><span class="material-symbols-outlined cart">shopping_cart</span></a>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="banner" class="section-m1" style="background-image: url('img/banner/b2.jpg');">
+        <h4 class="titre">Repair Service</h4>
+        <h2 class="principale">jusqu'à<span>70% de réduction</span>Tous les Chemises & Accessoires</h2>
+        <button class="normal">Explore plus</button>
+    </section>
+    <section id="sm-banner" class="section-p1">
+        <div class="banner-box" style="background-image: url('img/banner/b17.jpg');">
+            <h4>offres folles</h4>
+            <h2>acheter 1 obtener 1 gratuit</h2>
+            <span>La meilleure robe classique est en vente chez Cara</span>
+            <button class="with">apprendre encore plus</button>
+        </div>
+        <div class="banner-box box2" style="background-image: url('img/banner/b10.jpg');">
+            <h4>printemps été</h4>
+            <h2>saison à venir</h2>
+            <span>La meilleure robe classique est en vente chez Cara</span>
+            <button class="with">Collection</button>
+        </div>
+
+    </section>
+
+    <section id="banner3">
+        <div class="banner-box" style="background-image: url('img/banner/b7.jpg');">
+            <h2>VENTE SAISONNIERE</h2>
+            <h3>Collection Hiver -50% OFF</h3>
+        </div>
+
+        <div class="banner-box cart1" style="background-image: url('img/banner/b4.jpg');">
+            <h2>NOUVELLE COLLECTION DE CHAUSSURES</h2>
+            <h3>printemps/été 2022</h3>
+        </div>
+
+        <div class="banner-box cart2" style="background-image: url('img/banner/b18.jpg');">
+            <h2>T-SHIRTS</h2>
+            <h3>Nouveaux imprimés tendance</h3>
+        </div>
+
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Inscrivez-vous aux newsletters</h4>
+            <p>Recevez des mises à jour par e-mail sur notre dernière boutique et nos offres spéciales.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="your E-mail address">
+            <button class="normal">S'inscrie</button>
+        </div>
+
+    </section>
+
+    
+
+{% endblock %}

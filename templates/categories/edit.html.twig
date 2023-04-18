@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Categories{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 style"font-size: 26px;line-height: 35px;padding: 20px 0;">Edit Categories</h1>
+        {{ include('categories/_form.html.twig', {'button_label': 'Update'}) }}
+        <a href="{{ path('app_categories_index') }}">back to list</a>
+        {{ include('categories/_delete_form.html.twig') }}
+
+    </div>
+
+
+    
+
+    
+
+    
+{% endblock %}

@@ -1,0 +1,14 @@
+{{ form_start(form) }}
+    {{ form_row(form.name,{'attr':{'class':'form form-control'}}) }}
+    {{ form_row(form.description,{'attr':{'class':'form form-control'}}) }}
+    {{ form_row(form.price,{'attr':{'class':'form form-control'}}) }}
+    {{ form_row(form.stock,{'attr':{'class':'form form-control'}}) }}
+    {{ form_row(form.Slug,{'attr':{'class':'form form-control'}}) }}
+    {{ form_row(form.imageFile,{'attr':{'class':'form form-control'}}) }}
+    {{ form_row(form.Categories,{'attr':{'class':'form form-control'}}) }}
+
+
+
+    
+    <button class="btn btn-primary mt-3">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

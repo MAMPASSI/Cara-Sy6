@@ -1,0 +1,121 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+    {% if app.user %}
+        <section class="offcanvas offcanvas-end" id="userTools">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title" style="color: #088178;">Votre Profile</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>NOM : {{app.user.lastname}}  </p>
+                <p>PRENOM : {{app.user.firstname}}</p>
+                <p>E-mail : {{app.user.email}}</p>
+                <p>ADRESSE : {{app.user.address}} </p>
+                <p>CODE POSTAL : {{app.user.zipcode}} </p>
+                <p>VILLE : {{app.user.city}} </p>
+                <a href="#" class="btn btn-success mt-3 w-100">modifier voter profile</a><br>
+                <a href="{{ path('app_logout') }}" class="btn btn-primary mt-3 w-100">se déconnecter</a>
+
+            </div>
+        </section>
+    {% endif %}
+    <section id="page-header" class="about-header" style="background-image: url('img/banner/b1.jpg');">
+        <h2 >#parlons</h2>
+        <p>LAISSER UN MESSAGE. Nous aimons de vous!</p>
+    </section>
+
+    <section id="contact-detail" class="section-p1">
+        <div class="details">
+            <span>ENTRER EN CONTACT</span>
+            <h2>Visitez l'une de nos agences ou contactez-nous dès aujourd'hui</h2>
+            <h3>Siège social</h3>
+            <div>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-buildings" viewBox="0 0 16 16">
+                        <path d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022ZM6 8.694 1 10.36V15h5V8.694ZM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15Z"/>
+                        <path d="M2 11h1v1H2v-1Zm2 0h1v1H4v-1Zm-2 2h1v1H2v-1Zm2 0h1v1H4v-1Zm4-4h1v1H8V9Zm2 0h1v1h-1V9Zm-2 2h1v1H8v-1Zm2 0h1v1h-1v-1Zm2-2h1v1h-1V9Zm0 2h1v1h-1v-1ZM8 7h1v1H8V7Zm2 0h1v1h-1V7Zm2 0h1v1h-1V7ZM8 5h1v1H8V5Zm2 0h1v1h-1V5Zm2 0h1v1h-1V5Zm0-2h1v1h-1V3Z"/>
+                    </svg>
+                    <p>17 Avenue du MAréchal de Lattre de Tassigny,Villecresnes </p>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                    </svg>
+                    <p>Contact@example.com</p>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                    </svg>
+                    <p>Monday to Saturday: 9.00am to 16.pm </p>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg>
+                    <p>+33 107789076 </p>
+                </li>
+            </div>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2631.887871035983!2d2.5319491155275404!3d48.726734179274764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e60a2a21c62dfd%3A0x259f4bad1a8cb1!2s17%20Av.%20du%20Mar%C3%A9chal%20de%20Lattre%20de%20Tassigny%2C%2094440%20Villecresnes!5e0!3m2!1sfr!2sfr!4v1678807926277!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    
+
+    <section id="form-detail" class="d-flex">
+        <div style="width: 65%;display: flex;flex-direction: column;align-items: flex-start;">
+            {{ form_start(form) }}
+                <span>LAISSER UN MESSAGE</span>
+                <h2>Nous aimons avoir de vos nouvelles</h2>
+                <div class="col-12 col-lg-12">
+                    {{ form_row(form.lastname)}}
+                </div>
+
+                <div class="col-12 col-lg-12">
+                    {{ form_row(form.email)}}
+                        
+                </div>
+                <div class="col-12 col-lg-12">
+                    {{ form_row(form.subject)}}
+                </div>
+                    
+                <div class="col-12 col-lg-12">
+                    {{ form_row(form.message)}}
+
+                </div>
+                
+
+                <button class="normal">Envoyer</button>
+ 
+            {{ form_end(form) }}
+        </div>
+       
+
+
+            
+            
+        <div class="people">
+            <div>
+                <img src="img/people/1.png" alt="">
+                <p>John Doe <span>Senior Marketing Manager <br>phone : +33 123 44 66 08 <br>Email : Contact@example.com</span></p>
+            </div>
+            <div>
+                <img src="img/people/2.png" alt="">
+                <p>william  Smith <span>Senior Marketing Manager <br>phone : +33 123 44 66 08 <br>Email : Contact@example.com</span></p>
+            </div>
+            <div>
+                <img src="img/people/3.png" alt="">
+                <p>Emma Stone <span>Senior Marketing Manager <br>phone : +33 123 44 66 08 <br>Email : Contact@example.com</span></p>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}

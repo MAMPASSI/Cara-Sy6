@@ -1,0 +1,96 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          {% if app.user %}
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Mon compte</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{{path('app_logout')}}">Me deconnecter</a>
+             
+            </li>
+          {% else %}
+          
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{path('app_login')}}">Me connecter</a>
+          </li>
+
+          {% endif %}
+         
+         
+          
+          
+          
+          
+        </ul>
+        
+      </div>
+    </div>
+</nav>
+
+<main class="container">
+  <section class="row">
+      {%  for category in categories  %}
+          {% if category.parent == null %}
+              <div class="col-12">
+                  {{category.name}}
+              </div>
+          {% else %}
+              <div class="col-6">
+                  <div class="card">
+                      <div class="card-body">
+                          <h3 class="card-title">{{category.name}}</h3>
+                          <a href="#" class="btn btn-primary ">Voir les produits</a>
+                      </div>
+                  </div>
+                  <a href="#"></a>
+              </div>
+          {% endif %}
+      {% endfor %}
+      <div class="col-12">
+          {{dump()}}
+      </div>
+  </section>
+</main>
+
+<form action="">
+  <span>LEAVE A MESSAGE</span>
+  <h2>We love to hear from you</h2>
+  <input type="text" placeholder="Votre Nom">
+  <input type="text" placeholder="Votre Mail">
+  <input type="text" placeholder="sujet">
+  <textarea placeholder="Votre message"></textarea>
+  <button class="normal">Submit</button>
+</form>
+
+<td style="width: 50px;text-align: center;padding-top: 15px;">{{ product.stock }}</td>
+<td style="width: 450px;text-align: center;padding-top: 15px;">{{ product.createdAt ? product.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+<td style="width: 150px;text-align: center;padding-top: 15px;">{{ product.Slug }}</td>
+$news->setUpdatededAt(new \dateTime);
